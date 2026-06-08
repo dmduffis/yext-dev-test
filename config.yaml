@@ -8,3 +8,16 @@ buildConfiguration:
       - .npmrc
 livePreviewConfiguration:
   setupCommand: ":"
+
+# The site stream allows for specification of site entity whose data will be injected to all
+# generation contexts under the `_site` property.
+siteStream:
+  id: site-entity
+  entityId: turtlehead-tacos-site
+  fields:
+    - logo
+    - c_header
+    - c_footer
+  localization:
+    locales:
+      - en

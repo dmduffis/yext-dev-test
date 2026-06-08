@@ -1,0 +1,9 @@
+{
+  "$id": "c_cateringPhoneNumber",
+  "$schema": "https://schema.yext.com/config/km/field/v1",
+  "description": "Phone number for catering orders",
+  "displayName": "Catering Phone Number",
+  "group": "NONE",
+  "localization": "PRIMARY_ONLY",
+  "typeId": "phone"
+}

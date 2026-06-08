@@ -44,11 +44,11 @@ type ExternalImageData = TemplateProps & { externalImage: ExternalImage };
  * If the page is truly static this function is not necessary.
  */
 export const transformProps: TransformProps<ExternalImageData> = async (
-  data
+  data,
 ) => {
   const url = `https://jsonplaceholder.typicode.com/photos/2`;
   const externalImage = (await fetch(url).then((res: any) =>
-    res.json()
+    res.json(),
   )) as ExternalImage;
   return { ...data, externalImage };
 };

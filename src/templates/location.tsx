@@ -54,6 +54,7 @@ export const config: TemplateConfig = {
       "geocodedCoordinate",
       "services",
       "photoGallery",
+      "c_cateringPhoneNumber",
       // These fields will be used in Module 5 of the Hitchhikers Pages Track: https://hitchhikers.yext.com/tracks/pages-development/pgs605-create-directory/01-yext-directory-manager/
       // "dm_directoryParents_us_directory.name",
       // "dm_directoryParents_us_directory.slug",
@@ -172,11 +173,13 @@ const Location: Template<TemplateRenderProps> = ({
     services,
     description,
     dm_directoryParents,
+    c_cateringPhoneNumber,
+    _site,
   } = document;
 
   return (
     <>
-      <PageLayout templateData={{ __meta, document }}>
+      <PageLayout templateData={{ __meta, document }} _site={_site}>
         <Banner name={name} address={address} />
         <div className="centered-container">
           <BreadCrumbs
@@ -184,7 +187,12 @@ const Location: Template<TemplateRenderProps> = ({
             baseUrl={relativePrefixToRoot}
           />
           <div className="grid gap-x-10 gap-y-10 md:grid-cols-2">
-            <Details address={address} phone={mainPhone} services={services} />
+            <Details
+              address={address}
+              phone={mainPhone}
+              services={services}
+              cateringPhoneNumber={c_cateringPhoneNumber}
+            />
             {hours && <Hours title={"Restaurant Hours"} hours={hours} />}
             {description && <About name={name} description={description} />}
           </div>
