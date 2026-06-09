@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schema.yext.com/config/answers/answers-config/v1",
+  "$id": "turtlehead-tacos-locator",
+  "name": "Turtlehead Tacos Locator",
+  "supportedLocales": ["en"],
+  "countryRestrictions": [],
+  "verticals": {
+    "locations": {
+      "entityTypes": ["location"],
+      "name": "Locations",
+      "searchableFields": {
+        "builtin.location": {
+          "staticFilter": true
+        },
+        "keywords": {
+          "phraseMatch": true
+        },
+        "name": {
+          "textSearch": true
+        }
+      },
+      "sortBys": [],
+      "source": "YEXT"
+    }
+  },
+  "localizations": {},
+  "additionalSearchablePlaces": [],
+  "querySuggestions": {
+    "disablePopularQueries": false,
+    "verticalPromptsOnEmpty": false,
+    "popularQueriesBlacklistedTerms": [],
+    "popularQueriesBlacklistedRegex": [],
+    "universalPrompts": [],
+    "verticalPrompts": {}
+  }
+}
