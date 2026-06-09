@@ -14,8 +14,9 @@
     "node": "^18.0.0 || >=20.2.0"
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.12",
+    "@headlessui/react": "^1.7.19",
     "@heroicons/react": "^2.0.14",
+    "@types/mapbox-gl": "^3.4.1",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "@yext/search-headless-react": "^2.7.1",
     "@yext/search-ui-react": "^3.0.4",
