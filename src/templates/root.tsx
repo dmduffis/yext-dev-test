@@ -17,7 +17,7 @@ export const config: TemplateConfig = {
   stream: {
     $id: "root-stream",
     filter: {
-      entityTypes: ["ce_root"],
+      savedFilterIds: ["dm_us-directory"],
     },
     fields: [
       "id",

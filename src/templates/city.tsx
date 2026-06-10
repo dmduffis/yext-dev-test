@@ -30,7 +30,7 @@ export const config: TemplateConfig = {
   stream: {
     $id: "city-stream",
     filter: {
-      entityTypes: ["ce_city"],
+      savedFilterIds: ["dm_us-directory_address_city"],
     },
     fields: [
       "id",
