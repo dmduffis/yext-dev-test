@@ -20,7 +20,7 @@ export const config: TemplateConfig = {
   stream: {
     $id: "state-stream",
     filter: {
-      entityTypes: ["ce_state"],
+      savedFilterIds: ["dm_us-directory_address_region"],
     },
     fields: [
       "id",
@@ -30,14 +30,14 @@ export const config: TemplateConfig = {
       "description",
       "slug",
       "c_addressRegionDisplayName",
-      // These fields will be used in Module 5 of the Hitchhikers Pages Track: https://hitchhikers.yext.com/tracks/pages-development/pgs605-create-directory/01-yext-directory-manager/
-      // "dm_directoryParents_us_directory.name",
-      // "dm_directoryParents_us_directory.slug",
-      // "dm_directoryParents_us_directory.meta",
-      // "dm_directoryChildren.name",
-      // "dm_directoryChildren.slug",
-      // "dm_directoryChildren.dm_childEntityIds",
-      // "dm_childEntityIds",
+      "dm_directoryParents_us_directory.name",
+      "dm_directoryParents_us_directory.slug",
+      "dm_directoryParents_us_directory.meta",
+      "dm_directoryParents_us_directory.c_addressRegionDisplayName",
+      "dm_directoryChildren.name",
+      "dm_directoryChildren.slug",
+      "dm_directoryChildren.c_addressRegionDisplayName",
+      "dm_directoryChildren.dm_childEntityIds",
     ],
     localization: {
       locales: ["en"],
@@ -73,20 +73,19 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   };
 };
 
-// transformProps will be used in Module 5 of the Hitchhikers Pages Track: https://hitchhikers.yext.com/tracks/pages-development/pgs605-create-directory/01-yext-directory-manager/
-// export const transformProps: TransformProps<any> = async (data) => {
-//   const { dm_directoryParents_us_directory, name } = data.document;
+export const transformProps: TransformProps<any> = async (data) => {
+  const { dm_directoryParents_us_directory, name } = data.document;
 
-//   (dm_directoryParents_us_directory || []).push({ name: name, slug: "" });
+  (dm_directoryParents_us_directory || []).push({ name: name, slug: "" });
 
-//   return {
-//     ...data,
-//     document: {
-//       ...data.document,
-//       dm_directoryParents: dm_directoryParents_us_directory,
-//     },
-//   };
-// };
+  return {
+    ...data,
+    document: {
+      ...data.document,
+      dm_directoryParents: dm_directoryParents_us_directory,
+    },
+  };
+};
 
 const State: Template<TemplateRenderProps> = ({
   relativePrefixToRoot,

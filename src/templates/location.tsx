@@ -55,11 +55,10 @@ export const config: TemplateConfig = {
       "services",
       "photoGallery",
       "c_cateringPhoneNumber",
-      // These fields will be used in Module 5 of the Hitchhikers Pages Track: https://hitchhikers.yext.com/tracks/pages-development/pgs605-create-directory/01-yext-directory-manager/
-      // "dm_directoryParents_us_directory.name",
-      // "dm_directoryParents_us_directory.slug",
-      // "dm_directoryParents_us_directory.meta",
-      // "dm_directoryParents_us_directory.c_addressRegionDisplayName",
+      "dm_directoryParents_us_directory.name",
+      "dm_directoryParents_us_directory.slug",
+      "dm_directoryParents_us_directory.meta",
+      "dm_directoryParents_us_directory.c_addressRegionDisplayName",
     ],
     // The entity language profiles that documents will be generated for.
     localization: {
@@ -134,22 +133,20 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
  *
  * This function will be run during generation and pass in directly as props to the default
  * exported function.
- *
- * transformProps will be used in Module 5 of the Hitchhikers Pages Track: https://hitchhikers.yext.com/tracks/pages-development/pgs605-create-directory/01-yext-directory-manager/
  */
-// export const transformProps: TransformProps<any> = async (data) => {
-//   const { dm_directoryParents_us_directory, name } = data.document;
+export const transformProps: TransformProps<any> = async (data) => {
+  const { dm_directoryParents_us_directory, name } = data.document;
 
-//   (dm_directoryParents_us_directory || []).push({ name: name, slug: "" });
+  (dm_directoryParents_us_directory || []).push({ name: name, slug: "" });
 
-//   return {
-//     ...data,
-//     document: {
-//       ...data.document,
-//       dm_directoryParents: dm_directoryParents_us_directory,
-//     },
-//   };
-// };
+  return {
+    ...data,
+    document: {
+      ...data.document,
+      dm_directoryParents: dm_directoryParents_us_directory,
+    },
+  };
+};
 
 /**
  * This is the main template. It can have any name as long as it's the default export.

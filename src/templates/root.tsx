@@ -17,7 +17,7 @@ export const config: TemplateConfig = {
   stream: {
     $id: "root-stream",
     filter: {
-      entityTypes: ["ce_root"],
+      savedFilterIds: ["dm_us-directory"],
     },
     fields: [
       "id",
@@ -25,11 +25,10 @@ export const config: TemplateConfig = {
       "meta",
       "name",
       "slug",
-      // These fields will be used in Module 5 of the Hitchhikers Pages Track: https://hitchhikers.yext.com/tracks/pages-development/pgs605-create-directory/01-yext-directory-manager/
-      // "dm_directoryChildren.name",
-      // "dm_directoryChildren.slug",
-      // "dm_directoryChildren.c_addressRegionDisplayName",
-      // "dm_directoryChildren.dm_childEntityIds",
+      "dm_directoryChildren.name",
+      "dm_directoryChildren.slug",
+      "dm_directoryChildren.c_addressRegionDisplayName",
+      "dm_directoryChildren.dm_childEntityIds",
     ],
     localization: {
       locales: ["en"],
